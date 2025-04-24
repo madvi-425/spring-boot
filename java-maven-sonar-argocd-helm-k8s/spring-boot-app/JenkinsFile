@@ -60,7 +60,7 @@ pipeline {
         withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
           dir('repo') {
             sh '''
-              git clone https://$GITHUB_TOKEN@github.com/NappingLeader/spring-boot.git .
+              git clone https://github.com/NappingLeader/spring-boot.git .
               git config user.email "auvroneil007@gmail.com"
               git config user.name "Auvro"
 
