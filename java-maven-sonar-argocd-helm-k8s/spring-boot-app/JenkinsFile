@@ -7,7 +7,7 @@ pipeline {
   }
 
   environment {
-    SONAR_URL = "http://52.66.216.216:9000"
+    SONAR_URL = "http://http://13.235.64.53:9000"
     GIT_REPO_NAME = "spring-boot"
     GIT_USER_NAME = "NappingLeader"
   }
