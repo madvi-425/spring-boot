@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: docker754/demo
+        image: docker754/demo:21
         ports:
         - containerPort: 8080
