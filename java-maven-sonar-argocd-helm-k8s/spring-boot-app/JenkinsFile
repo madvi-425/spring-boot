@@ -1,15 +1,15 @@
 pipeline {
   agent {
     docker {
-      image 'docker754/my-java-sonar-docker'
+      image 'madvirajput04/javasonar'
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
     }
   }
 
   environment {
-    SONAR_URL = "http://13.201.172.90:9000"
+    SONAR_URL = "http://13.201.72.236:9000"
     GIT_REPO_NAME = "spring-boot"
-    GIT_USER_NAME = "NappingLeader"
+    GIT_USER_NAME = "madvi-425"
   }
 
   stages {
@@ -41,7 +41,7 @@ pipeline {
 
     stage('Build and Push Docker Image') {
       environment {
-        DOCKER_IMAGE = "docker754/demo:${BUILD_NUMBER}"
+        DOCKER_IMAGE = "madvirajput04/demo:${BUILD_NUMBER}"
       }
       steps {
         withCredentials([usernamePassword(credentialsId: 'docker-cred', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
@@ -60,7 +60,7 @@ pipeline {
         withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
           sh '''
             git config --global --add safe.directory /var/lib/jenkins/workspace/Pipeline
-            git config --global user.email "auvroneil007@gmail.com"
+            git config --global user.email "inhale345@gmail.com"
             git config --global user.name "Auvro"
             
             sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
