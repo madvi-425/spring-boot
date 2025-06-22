@@ -9,7 +9,7 @@ pipeline {
   environment {
     SONAR_URL = "http://13.201.72.236:9000"
     GIT_REPO_NAME = "spring-boot"
-    GIT_USER_NAME = "madie"
+    GIT_USER_NAME = "madvi-425"
   }
 
   stages {
@@ -61,7 +61,7 @@ pipeline {
           sh '''
             git config --global --add safe.directory /var/lib/jenkins/workspace/pipeline
             git config --global user.email "inhale345@gmail.com"
-            git config --global user.name "madvi-425"
+            git config --global user.name "madie"
             
             sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
 
